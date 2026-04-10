@@ -15,7 +15,11 @@ int main() {
 
     randArray(pArray, size); // 4, 2, 6
     printArray(pArray, size);
+    cout << "===================================\n";
 
+    addItemBack(pArray, size, 99);
+    cout << "Array: " << pArray << endl;
+    printArray(pArray, size);
 
 
     delete[] pArray;
