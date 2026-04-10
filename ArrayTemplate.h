@@ -21,4 +21,24 @@ void printArray(T arr[], int size, int w_cout = 5){
 	cout << endl;
 }
 
+//Додавання нового елементу в масив
+template <typename T>
+void addItemBack(T*& arr, int& size, T value) {
+	//1. Створюємо новий масив на +1 ел-т більше
+	T* tmp  = new T[size + 1];
+
+	//2.Переносимо дані зі старого масиву в новий
+	for (int i  = 0; i < size; i++) {
+		tmp[i] = arr[i];
+	}
+	tmp[size] = value;
+
+	//3. Видаляємо старий масив
+	if (arr!= nullptr) delete[] arr;
+
+	//4. Перепривʼязуємо покажчик на нову памʼять
+	arr = tmp;
+	size++;
+}
+
 
